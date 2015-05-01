@@ -176,9 +176,13 @@ public void GiveWeapons(int client) {
         SetEntProp(client, Prop_Send, "m_bHasDefuser", g_PlayerKit[client]);
     }
 
-    int len = strlen(g_PlayerNades[client]);
+    /*int len = strlen(g_PlayerNades[client]);*/
+    char nades[32];
+    nades = "hfsmi";
+    int len = strlen(nades);
     for (int i = 0; i < len; i++) {
-        char c = g_PlayerNades[client][i];
+        /*char c = g_PlayerNades[client][i];*/
+        char c = nades[i];
         char weapon[32];
         switch(c) {
             case 'h': weapon = "weapon_hegrenade";
